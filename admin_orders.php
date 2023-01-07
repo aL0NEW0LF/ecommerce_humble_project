@@ -68,7 +68,7 @@ if(isset($_GET['delete'])){
                 </th>
     </tr>
     <?php
-      $select_orders = "SELECT * FROM `users`, `order_details` WHERE user_idpk = orderid ORDER BY `order_created_at`;";
+      $select_orders = "SELECT * FROM `users`, `order_details` WHERE user_idpk = user_id ORDER BY `order_created_at`;";
       $result = $conn->query($select_orders);
       $conn->close();
       if(mysqli_num_rows($result) > 0){
@@ -76,19 +76,19 @@ if(isset($_GET['delete'])){
         {
       ?>
             <tr>
-                <td class="name">
+                <td class="name" style="padding: 10px 0;">
                     <?php echo $rows['fname'] ." ". $rows['lname'];?>
                 </td>
-                <td class="email">
+                <td class="email" style="padding: 10px 0;">
                     <?php echo $rows['email'];?>
                 </td>
-                <td class="telephone">
+                <td class="telephone" style="padding: 10px 0;">
                     <?php echo $rows['telephone'];?>
                 </td>
-                <td class="date">
+                <td class="date" style="padding: 10px 0;">
                     <?php echo $rows['order_created_at'];?>
                 </td>
-                <td class="total">
+                <td class="total" style="padding: 10px 0;">
                     <?php echo $rows['total'];?>
                 </td>
             </tr>

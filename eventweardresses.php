@@ -15,17 +15,16 @@ if(isset($_POST['add_to_cart'])){
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
-    $product_quantity = $_POST['product_quantity'];
     $product_id = mysqli_query($conn, "SELECT productid FROM product WHERE name = '$product_name'");
     $product_row = $product_id->fetch_assoc();
     $prod_id = $product_row['productid'];
  
-    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart_item`.`product` WHERE product_id_fk = productid AND name = '$product_name' AND user_id_fk = '$user_id'") or die('query failed');
+    $check_cart_numbers = mysqli_query($conn, "SELECT * FROM `cart_item` WHERE product_id_fk = $prod_id AND user_id_fk = '$user_id'") or die('query failed');
  
     if(mysqli_num_rows($check_cart_numbers) > 0){
        $message[] = 'already added to cart!';
     }else{
-       mysqli_query($conn, "INSERT INTO `cart_item`(user_id_fk, product_id_fk, quantity, item_created_at) VALUES('$user_id', '$prod_id', '$product_quantity', CURRENT_TIMESTAMP())") or die('query failed');
+       mysqli_query($conn, "INSERT INTO `cart_item`(user_id_fk, product_id_fk, quantity, item_created_at) VALUES('$user_id', '$prod_id', 1, CURRENT_TIMESTAMP())") or die('query failed');
        $message[] = 'product added to cart!';
     }
  
@@ -70,7 +69,6 @@ if(isset($_POST['add_to_cart'])){
       ?>
       <form action="" method="post">
         <div class="box">
-            <span class="discount">-18%</span>
             <div class="image">
                 <img src="<?php echo $fetch_products['product_picture']; ?>.png" alt="">
                 <div class="icons">

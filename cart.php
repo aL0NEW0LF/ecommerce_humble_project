@@ -66,6 +66,7 @@ if(isset($_GET['delete_all'])){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){   
       ?>
       <div class="box">
+      <img src="<?php echo $fetch_cart['product_picture']; ?>.png" alt="">
          <a href="cart.php?delete=<?php echo $fetch_cart['cartitemid']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
          <div class="name"><?php echo $fetch_cart['name']; ?></div>
          <div class="price"><?php echo $fetch_cart['price']; ?> dh</div>

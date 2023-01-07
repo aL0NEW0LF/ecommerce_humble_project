@@ -19,7 +19,6 @@
                 <ul>
                     <li><a href="admin_page.php"><i class="fas fa-home"></i>Home</a></li>
                     <li><a href="admin_categories.php"><i class="fas fa-list"></i>Categories</a></li>
-                    <li><a href="admin_brands.php"><i class="fas fa-copyright"></i>Brands</a></li>
                     <li><a href="admin_products.php"><i class="fas fa-barcode"></i>Products</a></li>
                     <li><a href="admin_orders.php"><i class="fas fa-money-bill-trend-up"></i>Orders</a></li>
                     <li><a href="admin_users.php"><i class="fas fa-users"></i>Users</a></li>

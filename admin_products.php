@@ -165,7 +165,7 @@ if(isset($_POST['update_product'])){
                                 </td>
                             </tr>
                             <tr>
-                              <td>
+                              <td colspan="2">
                                 <?php 
                                     $select_category_query ="SELECT `category_name` FROM `product_category`";
                                     $select_category_result = $conn->query($select_category_query);
@@ -197,7 +197,7 @@ if(isset($_POST['update_product'])){
                           <tr>  
                             <td>
                             <input type="file" id="file" name="product_picture" accept="image/png, image/jpeg">
-                            <label for="file" class="picupload">Votre photo</label>
+                            <label for="file" class="picupload">La photo du produit</label>
                             </td>
                                 <td>
                                   <input type="submit" value="add product" name="add_product" class="btn">
@@ -256,14 +256,11 @@ if(isset($_POST['update_product'])){
             </tr>
             <?php
                 }
-                ?>
+            }else{
+                echo '<tr><td class="empty" colspan="5">no orders placed yet!</td></tr>';
+            }
+            ?>
         </table>
-    
-    <?php
-      }else{
-         echo '<p class="empty">no orders placed yet!</p>';
-      }
-      ?>
     </div>
 </div>
 <section class="edit-product-form">
