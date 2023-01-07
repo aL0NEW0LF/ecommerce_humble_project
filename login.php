@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
-   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+   $select_users = mysqli_query($conn, "SELECT * FROM `users` WHERE  email = '$email' AND password = '$pass'") or die('query failed');
 
    if(mysqli_num_rows($select_users) > 0){
 
@@ -18,14 +18,14 @@ if(isset($_POST['submit'])){
 
          $_SESSION['admin_name'] = $row['username'];
          $_SESSION['admin_email'] = $row['email'];
-         $_SESSION['admin_id'] = $row['id'];
+         $_SESSION['admin_id'] = $row['user_idpk'];
          header('location:admin_page.php');
 
       }elseif($row['user_type'] == 'customer'){
 
          $_SESSION['user_name'] = $row['username'];
          $_SESSION['user_email'] = $row['email'];
-         $_SESSION['user_id'] = $row['id'];
+         $_SESSION['user_id'] = $row['user_idpk'];
          header('location:home.php');
 
       }
@@ -48,27 +48,31 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<?php
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message">
-         <span>'.$message.'</span>
-      </div>
-      ';
-   }
-}
-?>
-<div class="container">
-    <div id="logbox">
-      <form id="signup" method="post" action="">
-        <h1>Create an account</h1>
-        <input class="input pass" type="email" name="email" placeholder="enter your email" required/>
-        <input class="input pass" type="password" name="password" placeholder="enter your password" required/>
-        <input class="inputButton" name="submit" type="submit" value="Sign me up!"/>
-        <p>don't have an account? <a href="register.php">register now</a></p>
-      </form>
-    </div>
-  </div>
+
+<div class="form-container">
+
+<form action="" method="post">
+   <h3>login now</h3>
+   <input type="email" name="email" placeholder="enter your email" required class="box">
+   <input type="password" name="password" placeholder="enter your password" required class="box">
+   <input type="submit" name="submit" value="login now" class="btn">
+
+   <?php
+      if(isset($message)){
+         foreach($message as $message){
+            echo '
+            <div class="message">
+               <span>'.$message.'</span>
+            </div>
+            ';
+         }
+      }
+   ?>
+
+   <p>don't have an account? <a href="register.php">register now</a></p>
+</form>
+
+</div>
+
 </body>
 </html>

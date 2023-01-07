@@ -26,7 +26,7 @@ if(isset($_POST['add_category'])){
 
  if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM `product_category` WHERE id = '$delete_id'") or die('query failed');
+    mysqli_query($conn, "DELETE FROM `product_category` WHERE category_id = '$delete_id'") or die('query failed');
     header('location:admin_categories.php');
  }
 
@@ -129,14 +129,11 @@ if(isset($_POST['add_category'])){
             </tr>
             <?php
                 }
+                }else{
+         echo '<tr><td colspan="2" class="empty">no orders placed yet!<tr></td>';
+      }
                 ?>
         </table>
-    
-    <?php
-      }else{
-         echo '<p class="empty">no orders placed yet!</p>';
-      }
-      ?>
     </div>
 </div>
 

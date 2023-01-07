@@ -43,7 +43,7 @@ if(!isset($admin_id)){
                       <tr>
                         <td class="data">
                           <?php
-                            $users_num_query = mysqli_query($conn, "SELECT count(id) as Users_num FROM `users`") or die('query failed');
+                            $users_num_query = mysqli_query($conn, "SELECT count(user_idpk) as Users_num FROM `users`") or die('query failed');
                             $fetch_users_num = mysqli_fetch_assoc($users_num_query);
                             echo $fetch_users_num['Users_num'];
                           ?>
@@ -66,7 +66,7 @@ if(!isset($admin_id)){
                       <tr>
                         <td class="data">
                           <?php
-                            $Orders_num_query = mysqli_query($conn, "SELECT count(id) as Orders_num FROM `order_details`") or die('query failed');
+                            $Orders_num_query = mysqli_query($conn, "SELECT count(orderid) as Orders_num FROM `order_details`") or die('query failed');
                             $fetch_Orders_num = mysqli_fetch_assoc($Orders_num_query);
                             echo $fetch_Orders_num['Orders_num'];
                           ?>
@@ -112,7 +112,7 @@ if(!isset($admin_id)){
                       <tr>
                         <td class="data">
                           <?php
-                            $Admins_num_query = mysqli_query($conn, "SELECT count(id) as Admins_num FROM `users` WHERE user_type = 'admin'") or die('query failed');
+                            $Admins_num_query = mysqli_query($conn, "SELECT count(user_idpk) as Admins_num FROM `users` WHERE user_type = 'admin'") or die('query failed');
                             $fetch_Admins_num = mysqli_fetch_assoc($Admins_num_query);
                             echo $fetch_Admins_num['Admins_num'];
                           ?>

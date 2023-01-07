@@ -51,18 +51,19 @@ if(isset($message)){
    }
 }
 ?>
-<div class="container">
+<div class="form-container">
     <div id="logbox">
       <form id="signup" method="post" action="">
-        <h1>Create an account</h1>
-        <input class="input pass" name="name" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required/>
-        <input class="input pass" name="password" type="password" placeholder="Choose a password" required/>
-        <input class="input pass" name="cpassword" type="password" placeholder="Confirm password" required/>
-        <input class="input pass" name="email" type="email" placeholder="Email address" required/>
-        <input class="input pass" name="fname" type="text" placeholder="First name" required/>
-        <input class="input pass" name="lname" type="text" placeholder="Last name" required/>
-        <input class="input pass" name="phone" type="tel" placeholder="Phone number" required pattern="[0]{1}[6]{1}[\d \W \S]{8}"/>
-        <input class="inputButton" name="submit" type="submit" value="Sign me up!"/>
+        <h3>Create an account</h3>
+        <input class="box" name="name" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required/>
+        <input class="box" name="password" type="password" placeholder="Choose a password" required/>
+        <input class="box" name="cpassword" type="password" placeholder="Confirm password" required/>
+        <input class="box" name="email" type="email" placeholder="Email address" required/>
+        <input class="box" name="fname" type="text" placeholder="First name" required/>
+        <input class="box" name="lname" type="text" placeholder="Last name" required/>
+        <input class="box" name="phone" type="tel" placeholder="Phone number" required pattern="[0]{1}[6]{1}[\d \W \S]{8}"/>
+        <input class="btn" name="submit" type="submit" value="Sign me up!"/>
+        <p>if u already have an account, <a href="login.php">login to your account now</a></p>
       </form>
     </div>
   </div>

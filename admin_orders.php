@@ -68,7 +68,7 @@ if(isset($_GET['delete'])){
                 </th>
     </tr>
     <?php
-      $select_orders = "SELECT * FROM `users`, `order_details` WHERE `users`.`id` = `order_details`.`user_id` ORDER BY `order_created_at`;";
+      $select_orders = "SELECT * FROM `users`, `order_details` WHERE user_idpk = orderid ORDER BY `order_created_at`;";
       $result = $conn->query($select_orders);
       $conn->close();
       if(mysqli_num_rows($result) > 0){
@@ -94,14 +94,13 @@ if(isset($_GET['delete'])){
             </tr>
             <?php
                 }
-                ?>
+            }else{
+                echo '<tr><td class="empty" colspan="5">no orders placed yet!</td></tr>';
+            }
+            ?>
         </table>
     
-    <?php
-      }else{
-         echo '<p class="empty">no orders placed yet!</p>';
-      }
-      ?>
+    
            </div>
         </div>
 <!-- custom admin js file link  -->

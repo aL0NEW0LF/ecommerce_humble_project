@@ -15,15 +15,11 @@ if(isset($_POST['add_product'])){
     $name = $_POST['name'];
     $description = $_POST['desc'];
     $product_category = $_POST['select-cat'];
-    $product_brand = $_POST['select-brand'];
     $product_inventory = $_POST['inventory'];
     $product_price = $_POST['price'];
     $product_category_id = mysqli_query($conn, "SELECT category_id FROM product_category WHERE category_name = '$product_category'");
     $category_row = $product_category_id->fetch_assoc();
     $cat_id = $category_row['category_id'];
-    $product_brand_id = mysqli_query($conn, "SELECT brand_id FROM product_brand WHERE brand_name = '$product_brand'");
-    $brand_row = $product_brand_id->fetch_assoc();
-    $brand_id = $brand_row['brand_id'];
 
     $select_product_name = mysqli_query($conn, "SELECT name FROM `product` WHERE name = '$name'") or die('query failed');
 
@@ -65,7 +61,8 @@ if(isset($_POST['add_product'])){
         }
 
         move_uploaded_file($fileTmpName,$fileDestination);
-        $add_product_query = mysqli_query($conn, "INSERT INTO `product`(name, description, category_id_fk, brand_id_fk, inventory, price, created_at, product_picture) VALUES('$name', '$description', $cat_id, $brand_id, $product_inventory, $product_price, CURRENT_TIMESTAMP(), '$fileDestination')") or die('query failed');
+        $Productpicinsert = $fileDestination.'.'.$fileType;
+        $add_product_query = mysqli_query($conn, "INSERT INTO `product`(name, description, category_id_fk, inventory, price, created_at, product_picture) VALUES('$name', '$description', $cat_id, $product_inventory, $product_price, CURRENT_TIMESTAMP(), '$Productpicinsert')") or die('query failed');
     }
  }
 
@@ -85,15 +82,11 @@ if(isset($_POST['update_product'])){
     $update_name = $_POST['update_name'];
     $update_desc = $_POST['update_desc'];
     $update_cat = $_POST['update_cat'];
-    $update_brand = $_POST['update_brand'];
     $update_inventory = $_POST['update_inventory'];
     $update_price = $_POST['update_price'];
     $update_product_category_id = mysqli_query($conn, "SELECT category_id FROM product_category WHERE category_name = '$update_cat'");
     $update_category_row = $update_product_category_id->fetch_assoc();
     $update_cat_id = $update_category_row['category_id'];
-    $update_product_brand_id = mysqli_query($conn, "SELECT brand_id FROM product_brand WHERE brand_name = '$update_brand'");
-    $update_brand_row = $update_product_brand_id->fetch_assoc();
-    $update_brand_id = $update_brand_row['brand_id'];
 
     $update_file = $_FILES['update_picture'];
 
@@ -127,7 +120,7 @@ if(isset($_POST['update_product'])){
         echo "error";
     }
 
-    mysqli_query($conn, "UPDATE `product` SET name = '$update_name', description = '$update_desc', category_id_fk = $update_cat_id, brand_id_fk = $update_brand_id, inventory = '$update_inventory', price = '$update_price', modified_at = CURRENT_TIMESTAMP(), product_picture = '$update_fileDestination' WHERE id = '$update_p_id'") or die('query failed');
+    mysqli_query($conn, "UPDATE `product` SET name = '$update_name', description = '$update_desc', category_id_fk = $update_cat_id, inventory = '$update_inventory', price = '$update_price', modified_at = CURRENT_TIMESTAMP(), product_picture = '$update_fileDestination' WHERE id = '$update_p_id'") or die('query failed');
   
     header('location:admin_products.php');
   }
@@ -190,24 +183,6 @@ if(isset($_POST['update_product'])){
                                         ?>
                                   </select>
                               </td>
-                              <td>
-                                <?php 
-                                    $select_brand_query ="SELECT `brand_name` FROM `product_brand`";
-                                    $select_brand_result = $conn->query($select_brand_query);
-                                    if($select_brand_result->num_rows> 0){
-                                    $brand_options= mysqli_fetch_all($select_brand_result, MYSQLI_ASSOC);
-                                    }
-                                ?>
-                                <select name="select-brand" id="select-brand">
-                                    <?php 
-                                        foreach ($brand_options as $brand_option) {
-                                    ?>
-                                        <option><?php echo $brand_option['brand_name']; ?> </option>
-                                        <?php 
-                                            }
-                                        ?>
-                                </select>
-                              </td>
                           </tr>
                           <tr>
                             <td colspan="2">
@@ -244,9 +219,6 @@ if(isset($_POST['update_product'])){
                 <th class="category">
                     Category
                 </th>
-                <th class="brand">
-                    Brand
-                </th>
                 <th class="inventory">
                     Inventory
                 </th>
@@ -255,7 +227,7 @@ if(isset($_POST['update_product'])){
                 </th>
     </tr>
     <?php
-        $select_products = "SELECT * FROM `product`, `product_category`, `product_brand` WHERE `category_id_fk` = `category_id` AND `brand_id_fk` = `brand_id` ORDER BY `product`.`created_at`;";      
+        $select_products = "SELECT * FROM `product`, `product_category` WHERE `category_id_fk` = `category_id` ORDER BY `product`.`created_at`;";      
         $result = $conn->query($select_products);
       if(mysqli_num_rows($result) > 0){
         while($rows=$result->fetch_assoc())
@@ -271,9 +243,6 @@ if(isset($_POST['update_product'])){
                 <td class="category">
                     <?php echo $rows['category_name'];?>
                 </td>
-                <td class="brand">
-                    <?php echo $rows['brand_name'];?>
-                </td>
                 <td class="inventory">
                     <?php echo $rows['inventory'];?>
                 </td>
@@ -281,8 +250,8 @@ if(isset($_POST['update_product'])){
                     <?php echo $rows['price'];?>
                 </td>
                 <td>
-                    <a href="admin_products.php?update=<?php echo $rows['id']; ?>" class="option-btn" style="margin: 0 0 5px 0;">update product</a>
-                    <a href="admin_products.php?delete=<?php echo $rows['id']; ?>" onclick="return confirm('delete this product?');" id="delete" class="delete-btn">delete product</a>
+                    <a href="admin_products.php?update=<?php echo $rows['productid']; ?>" class="option-btn" style="margin: 0 0 5px 0;">update product</a>
+                    <a href="admin_products.php?delete=<?php echo $rows['productid']; ?>" onclick="return confirm('delete this product?');" id="delete" class="delete-btn">delete product</a>
                 </td>
             </tr>
             <?php
@@ -347,24 +316,6 @@ if(isset($_POST['update_product'])){
                                             }
                                         ?>
                                   </select>
-                              </td>
-                              <td>
-                                <?php 
-                                    $select_brand_query ="SELECT `brand_name`, `brand_id` FROM `product_brand`";
-                                    $select_brand_result = $conn->query($select_brand_query);
-                                    if($select_brand_result->num_rows> 0){
-                                    $brand_options= mysqli_fetch_all($select_brand_result, MYSQLI_ASSOC);
-                                    }
-                                ?>
-                                <select name="update_brand" id="update_brand">
-                                    <?php 
-                                        foreach ($brand_options as $brand_option) {
-                                    ?>
-                                        <option <?php if($brand_option['brand_id'] == $fetch_update['brand_id_fk']) { echo 'selected';} ?>><?php echo $brand_option['brand_name']; ?> </option>
-                                        <?php 
-                                            }
-                                        ?>
-                                </select>
                               </td>
                           </tr>
               <tr>

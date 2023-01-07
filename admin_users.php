@@ -16,7 +16,7 @@ if(isset($_GET['delete'])){
    header('location:admin_users.php');
 }
 
-$sql = "SELECT * FROM `users` ORDER BY id";
+$sql = "SELECT * FROM `users` ORDER BY user_idpk";
 $result = $conn->query($sql);
 ?>
 
@@ -54,7 +54,7 @@ $result = $conn->query($sql);
                         <p class="email"><?php echo $fetch_users['email']; ?></p>
                         <p class="tel"><?php echo $fetch_users['telephone']; ?></p>
                         <p class="usertype"><?php echo $fetch_users['user_type']; ?></p>
-                        <a href="admin_users.php?delete=<?php echo $fetch_users['id']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
+                        <a href="admin_users.php?delete=<?php echo $fetch_users['user_idpk']; ?>" onclick="return confirm('delete this user?');" class="delete-btn">delete user</a>
                     </div>
                     <?php
                      };
