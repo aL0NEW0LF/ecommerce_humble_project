@@ -38,7 +38,7 @@ if(isset($_POST['order_btn'])){
    if($cart_total == 0){
       $message[] = 'your cart is empty';
    }else{
-         mysqli_query($conn, "INSERT INTO `order_details`(user_id, order_customer_phone, order_customer_email, total, order_created_at) VALUES('$user_id', '$number', '$email', '$cart_total', CURRENT_TIMESTAMP())") or die('query failed');
+         mysqli_query($conn, "INSERT INTO `order_details`(user_id, order_customer_phone, order_customer_email, order_customer_email, total, order_created_at) VALUES('$user_id', '$number', '$email', '$name', '$cart_total', CURRENT_TIMESTAMP())") or die('query failed');
          $last_inserted_order = mysqli_insert_id($conn);
          mysqli_query($conn, "INSERT INTO `payment`(payment_method, payment_created_at, order_id) VALUES('$method', CURRENT_TIMESTAMP(), $last_inserted_order)") or die('query failed');
          mysqli_query($conn, "INSERT INTO `orderaddress`(order_id_fk, city, postal_code, address_line1) VALUES('$last_inserted_order', '$city', '$postal_code', '$address')") or die('query failed');
@@ -104,15 +104,15 @@ if(isset($_POST['order_btn'])){
       <div class="flex">
          <div class="inputBox">
             <span>votre nom :</span>
-            <input type="text" name="name" required placeholder="enter your name">
+            <input type="text" name="name" required placeholder="entrer votre nom">
          </div>
          <div class="inputBox">
             <span>votre numéro :</span>
-            <input type="number" name="number" required placeholder="enter your number">
+            <input type="number" name="number" required placeholder="entrer votre numero de telephone">
          </div>
          <div class="inputBox">
             <span>votre email :</span>
-            <input type="email" name="email" required placeholder="enter your email">
+            <input type="email" name="email" required placeholder="entrer votre email">
          </div>
          <div class="inputBox">
             <span>Mode de paiement:</span>
@@ -127,15 +127,15 @@ if(isset($_POST['order_btn'])){
          </div>
          <div class="inputBox">
             <span>ville :</span>
-            <input type="text" name="city" required placeholder="e.g. mumbai">
+            <input type="text" name="city" required placeholder="e.g. rabat">
          </div>
          <div class="inputBox">
             <span>pays :</span>
-            <input type="text" name="country" required placeholder="e.g. india">
+            <input type="text" name="country" required placeholder="e.g. morocco">
          </div>
          <div class="inputBox">
             <span> code PIN:</span>
-            <input type="number" min="0" name="postal_code" required placeholder="e.g. 123456">
+            <input type="number" min="0" name="postal_code" required placeholder="e.g. 12345">
          </div>
       </div>
       <input type="submit" value="order now" class="btn" name="order_btn">
