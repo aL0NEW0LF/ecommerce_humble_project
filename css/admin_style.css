@@ -38,6 +38,7 @@
                   padding: 20px;
                   font-size: 50px;
                   font-weight: 700;
+                  color:black;
               }
           .card .name{
               height: 200px;
@@ -82,12 +83,12 @@
         .delete-btn{
           margin: auto;
           display: block;
-          background-color: #171010;
+          background-color: #FFF0F5;
           width: 200px;
           font-size: 20px;
           padding: 10px;
           border-radius: 7px;
-          color: white;
+          color: black;
           
       }
         .sidebar{
@@ -99,7 +100,7 @@
             }
 
             .sidebar h2{
-  color: #fff;
+  color: black;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
@@ -114,7 +115,7 @@
 }    
 
  .sidebar ul li a{
-  color: #EDEDED;
+  color: black;
   display: block;
 }
 
@@ -142,12 +143,12 @@
  .sidebar .social_media a{
   display: block;
   width: 40px;
-  background: #444444;
+  background: #FFFAFA;
   height: 40px;
   line-height: 45px;
   text-align: center;
   margin: 0 5px;
-  color: #EDEDED;
+  color: black;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -158,11 +159,11 @@
  }
  .logout-btn{
    width: 140px;
-   color: #EDEDED;
+   color: black;
    padding: 15px;
    cursor: pointer;
    border-radius: .5rem;
-   background-color: #362222;
+   background-color: #FFFAFA;
    text-transform: capitalize;
    position: absolute;
    bottom: 50px;
@@ -179,7 +180,7 @@ table{
 
 th{
   font-size: 20px;
-  background-color: #362222;
+  background-color: #FFF0F5;
   color: white;
   padding: 10px 0;
   }
@@ -403,10 +404,11 @@ td.price{
     .sidebar {
              width: 100%;
              height: 520px;
-             background: #171010;
+             background: #FFF0F5;
              padding: 30px 0px;
              position: absolute;
              display: none;
+             color: black;
     }
   
     .add-product {
@@ -512,8 +514,9 @@ td.price{
   width: 300px;
   height: auto;
   margin: auto;
-  background-color: white;
+  background-color: #FFF0F5;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: .5rem;
 }
 
 .quick-info-box-container {
@@ -530,11 +533,13 @@ td.price{
 
 .quick-info-box table, .quick-info-box tr, .quick-info-box td{
   font-size: 30px;
+  border: 1px solid #FFF0F5;
 }
 
 .quick-info-box td{
-  background-color: white;
+  background-color: #FFF0F5;
   border: none;
+  color: black;
 }
 
 .quick-info-box td.data{

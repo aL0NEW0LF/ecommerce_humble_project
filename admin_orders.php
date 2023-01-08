@@ -48,20 +48,20 @@ if(isset($_GET['delete'])){
 <?php include 'admin_header.php'; ?>
 
 <div class="main">
-<h1 class="title"> ORDERS </h1>
+<h1 class="title"> Commandes </h1>
 <table>
     <tr>
                 <th class="name">
-                    Client name
+                    Nom client
                 </th>
                 <th class="email">
-                    Client email
+                    Email client 
                 </th>
                 <th class="telephone">
-                    Client phone number
+                    Numéro de téléphone client
                 </th>
                 <th class="date">
-                    Order date
+                    Date de la commande
                 </th>
                 <th class="total">
                     Total
@@ -95,7 +95,7 @@ if(isset($_GET['delete'])){
             <?php
                 }
             }else{
-                echo '<tr><td class="empty" colspan="5">no orders placed yet!</td></tr>';
+                echo '<tr><td class="empty" colspan="5">Aucune commande n’a encore été passée!</td></tr>';
             }
             ?>
         </table>

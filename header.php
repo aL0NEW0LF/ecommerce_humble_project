@@ -8,7 +8,7 @@
         <a href="#" class="fab fa-instagram"></a>
         <a href="#" class="fab fa-linkedin"></a>
      </div>
-     <p> new <a href="login.php">login</a> | <a href="register.php">register</a> </p>
+     <p> Nouveau? <a href="login.php">se connecter</a> | <a href="register.php">s'inscrire</a> </p>
   </div>
 </div>
 
@@ -17,10 +17,10 @@
      <a href="home.php" class="logo">ASTER</a>
 
      <nav class="navbar">
-        <a href="home.php">home</a>
-        <a href="about.php">about</a>
+        <a href="home.php">accueil</a>
+        <a href="about.php">à propos</a>
         <a href="contact.php">contact</a>
-        <a href="orders.php">orders</a>
+        <a href="orders.php">commandes</a>
      </nav>
 
      <div class="icons">
@@ -29,15 +29,15 @@
         <div id="user-btn" class="fas fa-user"></div>
         <?php
                $select_cart_number = mysqli_query($conn, "SELECT * FROM `cart_item` WHERE user_id_fk = '$user_id'") or die('query failed');
-               $cart_rows_number = mysqli_num_rows($select_cart_number); 
+               $cart_rows_number = mysqli_num_rows($select_cart_number);
             ?>
         <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span><?php echo ' '.$cart_rows_number; ?></span> </a>
      </div>
 
      <div class="user-box">
-        <p>username : <span><?php echo $_SESSION['user_name']; ?></span></p>
+        <p>nom utilisateur : <span><?php echo $_SESSION['user_name']; ?></span></p>
         <p>email : <span><?php echo $_SESSION['user_email']; ?></span></p>
-        <a href="logout.php" class="delete-btn">logout</a>
+        <a href="logout.php" class="delete-btn">déconnexion</a>
      </div>
   </div>
 </div>

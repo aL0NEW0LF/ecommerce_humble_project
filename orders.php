@@ -18,7 +18,7 @@ if(!isset($user_id)){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>orders</title>
+   <title>Commandes</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -32,8 +32,8 @@ if(!isset($user_id)){
 <?php include 'header.php'; ?>
 
 <div class="heading">
-   <h3>your orders</h3>
-   <p> <a href="home.php">home</a> / orders </p>
+   <h3>Vos commandes</h3>
+   <p> <a href="home.php">acceuil</a> / commandes </p>
 </div>
 
 <section class="placed-orders">
@@ -48,12 +48,12 @@ if(!isset($user_id)){
             while($fetch_orders = mysqli_fetch_assoc($order_query)){
       ?>
       <div class="box">
-         <p> name : <span><?php echo $fetch_orders['order_customer_name']; ?></span> </p>
+         <p> nom : <span><?php echo $fetch_orders['order_customer_name']; ?></span> </p>
          <p> email : <span><?php echo $fetch_orders['order_customer_email']; ?></span> </p>
          <p> address : <span><?php echo $fetch_orders['address_line1'] .', '. $fetch_orders['city'] .' - '. $fetch_orders['postal_code']; ?></span> </p>
-         <p> phone number : <span><?php echo $fetch_orders['order_customer_phone']; ?></span> </p>
-         <p> payment method : <span><?php echo $fetch_orders['payment_method']; ?></span> </p>
-         <p> total price : <span><?php echo $fetch_orders['total']; ?></span> </p>
+         <p> numéro telephone : <span><?php echo $fetch_orders['order_customer_phone']; ?></span> </p>
+         <p> mode de payment : <span><?php echo $fetch_orders['payment_method']; ?></span> </p>
+         <p> prix total : <span><?php echo $fetch_orders['total']; ?></span> </p>
          </div>
          <?php
        }

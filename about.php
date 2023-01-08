@@ -32,8 +32,8 @@ if(!isset($user_id)){
 <?php include 'header.php'; ?>
 
 <div class="heading">
-   <h3>about us</h3>
-   <p> <a href="home.php">home</a> / about </p>
+   <h3>à propos de nous</h3>
+   <p> <a href="home.php">acceuil</a> / à propos </p>
 </div>
 
 <section class="about">
@@ -43,12 +43,12 @@ if(!isset($user_id)){
 
 
       <div class="content">
-         <h3>why choose us?</h3>
+         <h3>pourquoi nous?</h3>
          <p>ASTER est une marque dediee particulièrement aux femmes on est un groupe de designers qui vous garantissent des
           collections sous le thème de notre  marque "simple and  perfect " en combinant des couleurs claires et très peu de textes pour refléter toujours le mode de la femme élégante et gracieuse .</P>
 
 
-         <a href="contact.php" class="btn">contact us</a>
+         <a href="contact.php" class="btn">contacter nous</a>
       </div>
 
    </div>
@@ -57,135 +57,135 @@ if(!isset($user_id)){
 
 <section class="reviews">
 
-   <h1 class="title">laidies's reviews</h1>
+<h1 class="title">avis clients</h1>
 
-   <div class="box-container">
+<div class="box-container">
 
-      <div class="box">
-         <img src="images/a.png" alt="">
-         <p>I started shopping from ASTER lately and I love how affordable aster  is .</p>
-         <div class="stars">
+   <div class="box">
+      <img src="images/a.png" alt="">
+      <p>J’ai commencé à magasiner chez ASTER récemment et j’adore à quel point l’aster est abordable .</p>
+      <div class="stars">
 
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>Dalida jack</h3>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
       </div>
-
-      <div class="box">
-         <img src="images/b.jpg" alt="">
-         <p> whenever I get an ASTER dress I ALWAYS get compliments, it’s honestly such a good site .</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-         </div>
-         <h3>Luna deo</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/c.jpg" alt="">
-         <p>I'm 18 and I love the fact they have lots of clothes I can wear,I have found lots of dresses.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3> Mima kami</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/d.jpg" alt="">
-         <p> ive had some fantastic discounts
-            from them and delievery has always been on time, its really good.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-         </div>
-         <h3>Anna maria</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/e.jpg" alt="">
-         <p>I actually had a pretty good experience when I ordered from , I think you get what you pay for Everything looked so cute.</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-         </div>
-         <h3>Sara slami</h3>
-      </div>
-
-      <div class="box">
-         <img src="images/f.jpeg" alt="">
-         <p>i just ordered 5 tank tops from this website and i was soooo happy with them they litterally look exactly like the website .</p>
-         <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-         </div>
-         <h3>Jasmin watersun </h3>
-      </div>
-
+      <h3>Dalida jack</h3>
    </div>
+
+   <div class="box">
+      <img src="images/b.jpg" alt="">
+      <p>  chaque fois que je reçois une robe ASTER, je reçois TOUJOURS des compliments, c’est honnêtement un si bon site .</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+      </div>
+      <h3>Luna deo</h3>
+   </div>
+
+   <div class="box">
+      <img src="images/c.jpg" alt="">
+      <p>J’ai 18 ans et j’adore le fait qu’ils ont beaucoup de vêtements que je peux porter, j’ai .trouvé beaucoup de robes.</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div>
+      <h3> Mima kami</h3>
+   </div>
+
+   <div class="box">
+      <img src="images/d.jpg" alt="">
+      <p> J’ai eu des réductions fantastiques
+         D’eux et Delievery a toujours été à l’heure, c’est vraiment bon.</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+      </div>
+      <h3>Anna maria</h3>
+   </div>
+
+   <div class="box">
+      <img src="images/e.jpg" alt="">
+      <p>Je viens de commander 5 débardeurs sur ce site Web et j’étais tellement content d’eux qu’ils ressemblent littéralement exactement au site Web.</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star-half-alt"></i>
+      </div>
+      <h3>Sara slami</h3>
+   </div>
+
+   <div class="box">
+      <img src="images/f.jpeg" alt="">
+      <p>En fait, j’ai eu une assez bonne expérience quand j’ai commandé de, je pense que vous obtenez ce que vous payez Tout avait l’air si mignon.</p>
+      <div class="stars">
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+         <i class="fas fa-star"></i>
+      </div>
+      <h3>Jasmin watersun </h3>
+   </div>
+
+</div>
 
 </section>
 
 <section class="authors">
 
-   <h1 class="title">our great designers </h1>
+<h1 class="title">Nos designers </h1>
 
-   <div class="box-container">
+<div class="box-container">
 
-      <div class="box">
-         <img src="images/at1.jpg" alt="">
-         <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-         </div>
-         <h3>Yuko northon </h3>
+   <div class="box">
+      <img src="images/at1.jpg" alt="">
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="#" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-instagram"></a>
+         <a href="#" class="fab fa-linkedin"></a>
       </div>
-
-      <div class="box">
-         <img src="images/at2.jpg" alt="">
-         <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-         </div>
-         <h3> Cami sopht </h3>
-      </div>
-
-      <div class="box">
-         <img src="images/at3.jpg" alt="">
-         <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
-            <a href="#" class="fab fa-linkedin"></a>
-         </div>
-         <h3> Cyprein del </h3>
-      </div>
-
-
+      <h3>Yuko northon </h3>
    </div>
+
+   <div class="box">
+      <img src="images/at2.jpg" alt="">
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="#" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-instagram"></a>
+         <a href="#" class="fab fa-linkedin"></a>
+      </div>
+      <h3> Cami sopht </h3>
+   </div>
+
+   <div class="box">
+      <img src="images/at3.jpg" alt="">
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="#" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-instagram"></a>
+         <a href="#" class="fab fa-linkedin"></a>
+      </div>
+      <h3> Cyprein del </h3>
+   </div>
+
+
+</div>
 
 </section>
 

@@ -11,18 +11,19 @@
         d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
 </svg>
 <div class="grid-container">
-            <div class="sidebar">
-                <h2 style="font-weight: 700;">ADMIN</h2>
-                <p class="userinfo">username : <?php echo $_SESSION['admin_name']; ?></p>
+            <div class="sidebar" style="background-color:#FFF0F5"; >
+                <h2 style="font-weight: 700;" >ADMIN</h2>
+                <p class="userinfo">nom d’utilisateur : <?php echo $_SESSION['admin_name']; ?></p>
                 <p class="userinfo" style="margin-bottom: 20px;">email : <?php echo $_SESSION['admin_email']; ?></p>
-                <a href="logout.php" class="logout-btn">logout</a>
+                <a href="logout.php" class="logout-btn" >déconnexion</a>
                 <ul>
-                    <li><a href="admin_page.php"><i class="fas fa-home"></i>Home</a></li>
-                    <li><a href="admin_categories.php"><i class="fas fa-list"></i>Categories</a></li>
-                    <li><a href="admin_products.php"><i class="fas fa-barcode"></i>Products</a></li>
-                    <li><a href="admin_orders.php"><i class="fas fa-money-bill-trend-up"></i>Orders</a></li>
-                    <li><a href="admin_users.php"><i class="fas fa-users"></i>Users</a></li>
-                </ul> 
+                    <li><a href="admin_page.php"><i class="fas fa-home"></i>acceuil</a></li>
+                    <li><a href="admin_categories.php"><i class="fas fa-list"></i>Catégories</a></li>
+                    <li><a href="admin_brands.php"><i class="fas fa-copyright"></i>marques</a></li>
+                    <li><a href="admin_products.php"><i class="fas fa-barcode"></i>produits</a></li>
+                    <li><a href="admin_orders.php"><i class="fas fa-money-bill-trend-up"></i>commandes</a></li>
+                    <li><a href="admin_users.php"><i class="fas fa-users"></i>utilisateurs</a></li>
+                </ul>
                 <div class="social_media">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>

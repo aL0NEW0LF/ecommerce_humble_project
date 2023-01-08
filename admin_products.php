@@ -151,17 +151,17 @@ if(isset($_POST['update_product'])){
                         <table>
                             <tr>
                               <td colspan="2">
-                                <h1 class="title">add product</h1>
+                                <h1 class="title">ajouter un produit</h1>
                               </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <input type="text" name="name" class="box" placeholder="enter product name" required>
+                                    <input type="text" name="name" class="box" placeholder="enterer le nom du produit" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <textarea rows="4" cols="50" name="desc" form="add-product" placeholder="description de la category" id="desc"></textarea>              
+                                    <textarea rows="4" cols="50" name="desc" form="add-product" placeholder="description du produit" id="desc"></textarea>              
                                 </td>
                             </tr>
                             <tr>
@@ -186,12 +186,12 @@ if(isset($_POST['update_product'])){
                           </tr>
                           <tr>
                             <td colspan="2">
-                                <input type="number" name="inventory" class="box" placeholder="enter product inventory" min="0" required>
+                                <input type="number" name="inventory" class="box" placeholder="entrer l'inventaire du produit" min="0" required>
                             </td>
                           </tr>
                           <tr>
                             <td colspan="2">
-                                <input type="number" name="price" class="box" placeholder="enter product price" min="0" required>
+                                <input type="number" name="price" class="box" placeholder="entrer le prix du produit" min="0" required>
                             </td>
                           </tr>
                           <tr>  
@@ -200,7 +200,7 @@ if(isset($_POST['update_product'])){
                             <label for="file" class="picupload">La photo du produit</label>
                             </td>
                                 <td>
-                                  <input type="submit" value="add product" name="add_product" class="btn">
+                                  <input type="submit" value="ajouter" name="add_product" class="btn">
                               </td>
                             </tr>
                         </table>
@@ -211,19 +211,19 @@ if(isset($_POST['update_product'])){
 <table>
     <tr>
                 <th class="name">
-                    Name
+                    Nom
                 </th>
                 <th class="description">
                     Description
                 </th>
                 <th class="category">
-                    Category
+                    Catégorie
                 </th>
                 <th class="inventory">
-                    Inventory
+                    Inventaire
                 </th>
                 <th class="price">
-                    Price
+                    Prix
                 </th>
     </tr>
     <?php
@@ -250,14 +250,14 @@ if(isset($_POST['update_product'])){
                     <?php echo $rows['price'];?>
                 </td>
                 <td>
-                    <a href="admin_products.php?update=<?php echo $rows['productid']; ?>" class="option-btn" style="margin: 0 0 5px 0;">update product</a>
-                    <a href="admin_products.php?delete=<?php echo $rows['productid']; ?>" onclick="return confirm('delete this product?');" id="delete" class="delete-btn">delete product</a>
+                    <a href="admin_products.php?update=<?php echo $rows['productid']; ?>" class="option-btn" style="margin: 0 0 5px 0;">modifier le produit</a>
+                    <a href="admin_products.php?delete=<?php echo $rows['productid']; ?>" onclick="return confirm('delete this product?');" id="delete" class="delete-btn">supprimer le produit</a>
                 </td>
             </tr>
             <?php
                 }
             }else{
-                echo '<tr><td class="empty" colspan="5">no orders placed yet!</td></tr>';
+                echo '<tr><td class="empty" colspan="5">il n y a aucun produit!</td></tr>';
             }
             ?>
         </table>
@@ -277,7 +277,7 @@ if(isset($_POST['update_product'])){
             <table>
                 <tr>
                   <td colspan="2">
-                    <h1 class="title">update product</h1>
+                    <h1 class="title">modifier le produit</h1>
                   </td>
                 </tr>
                 <tr>
@@ -287,12 +287,12 @@ if(isset($_POST['update_product'])){
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="text" name="update_name" class="box" value="<?php echo $fetch_update['name']; ?>" placeholder="update product name">
+                        <input type="text" name="update_name" class="box" value="<?php echo $fetch_update['name']; ?>" placeholder="modifier le nom du produit">
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <textarea rows="4" cols="50" name="update_desc" form="update-product" placeholder="update product description" id="desc"><?php echo $fetch_update['description']; ?></textarea>              
+                        <textarea rows="4" cols="50" name="update_desc" form="update-product" placeholder="modifier la description du prroduit" id="desc"><?php echo $fetch_update['description']; ?></textarea>              
                     </td>
                 </tr>
                 <tr>
@@ -317,23 +317,23 @@ if(isset($_POST['update_product'])){
                           </tr>
               <tr>
                 <td colspan="2">
-                    <input type="number" name="update_inventory" class="box" value="<?php echo $fetch_update['inventory']; ?>" placeholder="update product inventory" min="0">
+                    <input type="number" name="update_inventory" class="box" value="<?php echo $fetch_update['inventory']; ?>" placeholder="modifier l'inventaire du produit" min="0">
                 </td>
               </tr>
               <tr>
                 <td colspan="2">
-                    <input type="number" name="update_price" class="box" value="<?php echo $fetch_update['price']; ?>" placeholder="update product price" min="0">
+                    <input type="number" name="update_price" class="box" value="<?php echo $fetch_update['price']; ?>" placeholder="modifier le prix du produit" min="0">
                 </td>
                 </tr>
                 <tr>
                   <td colspan="2" style="padding: 10px;">
                    <input type="file" id="update_picture" name="update_picture" accept="image/png, image/jpeg">
-                   <label for="update_picture" class="picupload" style="padding: 14px 20px;">Votre photo</label>
+                   <label for="update_picture" class="picupload" style="padding: 14px 20px;">modifier la photo du produit</label>
                   </td>
                 </tr>
                 <tr>
                     <td>
-                      <input type="submit" value="update product" name="update_product" class="btn">
+                      <input type="submit" value="modifier" name="update_product" class="btn">
                   </td>
                   <td>
                     <input type="reset" value="cancel" id="close-update" style="margin: 0 0 0 5px; width: calc(100% - 5px);">

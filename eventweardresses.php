@@ -36,7 +36,7 @@ if(isset($_POST['add_to_cart'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Event-wear-dresses</title>
+   <title>Robes Event</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -53,7 +53,7 @@ if(isset($_POST['add_to_cart'])){
 <?php include 'header.php'; ?>
 
 <div class="heading">
-   <h3>Event-wear-dresses</h3>
+   <h3>Robes Event</h3>
 
 </div>
 
@@ -72,14 +72,12 @@ if(isset($_POST['add_to_cart'])){
             <div class="image">
                 <img src="<?php echo $fetch_products['product_picture']; ?>.png" alt="">
                 <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
                     <input type="submit" value="add to cart" name="add_to_cart" class="cart-btn">
-                    <a href="#" class="fas fa-share"></a>
                 </div>
             </div>
             <div class="content">
-                <h3>event-dress</h3>
-                <div class="price"> <?php echo $fetch_products['price']; ?></div>
+                <h3><?php echo $fetch_products['name']; ?></h3>
+                <div class="price"> <?php echo $fetch_products['price']; ?> dh</div>
             </div>
             <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
             <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
@@ -87,27 +85,6 @@ if(isset($_POST['add_to_cart'])){
         </div>
         </form>
         <?php
-         }
-      }else{
-         echo '<p class="empty">no products added yet!</p>';
-      }
-      ?>
-        <?php  
-         $select_products = mysqli_query($conn, "SELECT * FROM `product` WHERE category_id_fk = 5") or die('query failed');
-         if(mysqli_num_rows($select_products) > 0){
-            while($fetch_products = mysqli_fetch_assoc($select_products)){
-      ?>
-     <form action="" method="post" class="box">
-      <img class="image" src="<?php echo $fetch_products['product_picture']; ?>" alt="">
-      <div class="name"><?php echo $fetch_products['name']; ?></div>
-      <div class="price">$<?php echo $fetch_products['price']; ?>/-</div>
-      <input type="number" min="1" name="product_quantity" value="1" class="qty">
-      <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
-      <input type="hidden" name="product_price" value="<?php echo $fetch_products['price']; ?>">
-      <input type="hidden" name="product_image" value="<?php echo $fetch_products['product_picture']; ?>">
-      <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-     </form>
-      <?php
          }
       }else{
          echo '<p class="empty">no products added yet!</p>';

@@ -37,7 +37,7 @@ if(!isset($admin_id)){
                       </tr>
                       <tr>
                         <td>
-                          Users
+                        Utilisateurs
                         </td>
                       </tr>
                       <tr>
@@ -60,7 +60,7 @@ if(!isset($admin_id)){
                       </tr>
                       <tr>
                         <td>
-                          Orders
+                          Commandes
                         </td>
                       </tr>
                       <tr>
@@ -83,7 +83,7 @@ if(!isset($admin_id)){
                       </tr>
                       <tr>
                         <td>
-                          Total spendings
+                          Dépenses totales
                         </td>
                       </tr>
                       <tr>

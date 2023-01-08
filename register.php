@@ -53,17 +53,17 @@ if(isset($message)){
 ?>
 <div class="form-container">
     <div id="logbox">
-      <form id="signup" method="post" action="">
-        <h3>Create an account</h3>
+    <form id="signup" method="post" action="">
+        <h3>Créer un compte</h3>
         <input class="box" name="name" type="text" placeholder="What's your username?" pattern="^[\w]{3,16}$" autofocus="autofocus" required/>
-        <input class="box" name="password" type="password" placeholder="Choose a password" required/>
-        <input class="box" name="cpassword" type="password" placeholder="Confirm password" required/>
-        <input class="box" name="email" type="email" placeholder="Email address" required/>
-        <input class="box" name="fname" type="text" placeholder="First name" required/>
-        <input class="box" name="lname" type="text" placeholder="Last name" required/>
-        <input class="box" name="phone" type="tel" placeholder="Phone number" required pattern="[0]{1}[6]{1}[\d \W \S]{8}"/>
-        <input class="btn" name="submit" type="submit" value="Sign me up!"/>
-        <p>if u already have an account, <a href="login.php">login to your account now</a></p>
+        <input class="box" name="password" type="password" placeholder="mot de pass" required/>
+        <input class="box" name="cpassword" type="password" placeholder="confirmer le mot de pass" required/>
+        <input class="box" name="email" type="email" placeholder="addresse email" required/>
+        <input class="box" name="fname" type="text" placeholder="prenom" required/>
+        <input class="box" name="lname" type="text" placeholder="nom" required/>
+        <input class="box" name="phone" type="tel" placeholder="numero de telephone" required pattern="[0]{1}[6]{1}[\d \W \S]{8}"/>
+        <input class="btn" name="submit" type="submit" value="Sign up"/>
+        <p>Si vous avez déjà un compte, <a href="login.php">Connectez-vous à votre compte </a></p>
       </form>
     </div>
   </div>

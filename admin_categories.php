@@ -76,7 +76,7 @@ if(isset($_POST['add_category'])){
                         <table>
                         <tr>
                               <td>
-                                <h1 class="title">add category</h1>
+                                <h1 class="title">Ajouter une catégorie</h1>
                               </td>
                             </tr>
                             <tr>
@@ -98,14 +98,14 @@ if(isset($_POST['add_category'])){
                     </form>
                 </div>
 
- <h1 class="title"> Categories </h1>
+ <h1 class="title"> Catégories </h1>
 <table>
     <tr>
                 <th class="name">
-                    Category name
+                Nom de la catégorie
                 </th>
                 <th class="description">
-                    Category desc
+                Description de la catégorie
                 </th>
     </tr>
     <?php
@@ -123,14 +123,14 @@ if(isset($_POST['add_category'])){
                     <?php echo $rows['category_description'];?>
                 </td>
                 <td>
-                    <a href="admin_categories.php?update=<?php echo $rows['category_id']; ?>" class="delete-btn" style="margin: 0 0 5px 0;">update brand</a>
-                    <a href="admin_categories.php?delete=<?php echo $rows['category_id']; ?>" onclick="return confirm('delete this brand?');" class="delete-btn">delete brand</a>
+                    <a href="admin_categories.php?update=<?php echo $rows['category_id']; ?>" class="delete-btn" style="margin: 0 0 5px 0;">modifier la catégorie</a>
+                    <a href="admin_categories.php?delete=<?php echo $rows['category_id']; ?>" onclick="return confirm('delete this brand?');" class="delete-btn">supprimer la catégorie</a>
                 </td>
             </tr>
             <?php
                 }
                 }else{
-         echo '<tr><td colspan="2" class="empty">no orders placed yet!<tr></td>';
+         echo '<tr><td colspan="2" class="empty">Aucune commande n’a encore été passée!<tr></td>';
       }
                 ?>
         </table>
@@ -151,7 +151,7 @@ if(isset($_POST['add_category'])){
           <table>
                         <tr>
                               <td colspan="2">
-                                <h1 class="title">update category</h1>
+                                <h1 class="title">modifier la catégorie</h1>
                               </td>
                             </tr>
                             <tr>
