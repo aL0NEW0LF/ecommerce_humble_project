@@ -66,13 +66,13 @@ if(isset($_GET['delete_all'])){
             while($fetch_cart = mysqli_fetch_assoc($select_cart)){   
       ?>
       <div class="box">
-      <img src="<?php echo $fetch_cart['product_picture']; ?>.png" alt="">
+      <img src="<?php echo $fetch_cart['product_picture']; ?>.jpeg" alt="">
          <a href="cart.php?delete=<?php echo $fetch_cart['cartitemid']; ?>" class="fas fa-times" onclick="return confirm('delete this from cart?');"></a>
          <div class="name"><?php echo $fetch_cart['name']; ?></div>
          <div class="price"><?php echo $fetch_cart['price']; ?> dh</div>
          <form action="" method="post">
             <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['cartitemid']; ?>">
-            <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
+            <input type="number" min="1" max="<?php echo $fetch_cart['inventory']; ?>" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
             <input type="submit" name="update_cart" value="modifer" class="option-btn">
          </form>
          <div class="sub-total"> sub total : <span><?php echo $sub_total = ($fetch_cart['quantity'] * $fetch_cart['price']); ?> dh</span> </div>

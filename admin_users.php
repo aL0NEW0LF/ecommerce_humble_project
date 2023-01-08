@@ -21,7 +21,7 @@ if(isset($_POST['update_user_type'])){
    $user_type_updated = $_POST['update_user_type'];
 
    mysqli_query($conn, "UPDATE `users` SET user_type = '$user_type_updated' WHERE user_idpk = $user_id_tobeupdated") or die('query failed');
-   header('admin_users.php');
+   header('location:admin_users.php');
  }
 
 $sql = "SELECT * FROM `users` ORDER BY user_idpk";
@@ -58,7 +58,7 @@ $result = $conn->query($sql);
                         while($fetch_users = mysqli_fetch_assoc($select_users)){
                      ?>
                      <form action="" method="post">
-                     <div class="card" style="background-color:white">
+                     <div class="card">
                         <p class="name"><?php echo $fetch_users['fname']. " " .$fetch_users['lname']; ?></p>
                         <p class="email"><?php echo $fetch_users['email']; ?></p>
                         <p class="tel"><?php echo $fetch_users['telephone']; ?></p>

@@ -68,11 +68,10 @@ if(isset($_POST['add_product'])){
 
  if(isset($_GET['delete'])){
   $delete_id = $_GET['delete'];
-  $delete_image_query = mysqli_query($conn, "SELECT product_picture FROM `product` WHERE id = '$delete_id'") or die('query failed');
+  $delete_image_query = mysqli_query($conn, "SELECT product_picture FROM `product` WHERE productid = '$delete_id'") or die('query failed');
   $fetch_delete_image = mysqli_fetch_assoc($delete_image_query);
   $picture_to_delete = $fetch_delete_image['product_picture'];
-  unlink($picture_to_delete);
-  mysqli_query($conn, "DELETE FROM `product` WHERE id = '$delete_id'") or die('query failed');
+  mysqli_query($conn, "DELETE FROM `product` WHERE productid = '$delete_id'") or die('query failed');
   header('location:admin_products.php');
 }
 
@@ -87,7 +86,8 @@ if(isset($_POST['update_product'])){
     $update_product_category_id = mysqli_query($conn, "SELECT category_id FROM product_category WHERE category_name = '$update_cat'");
     $update_category_row = $update_product_category_id->fetch_assoc();
     $update_cat_id = $update_category_row['category_id'];
-
+    
+    if(isset($_POST['update_picture'])){
     $update_file = $_FILES['update_picture'];
 
     $update_fileName = $_FILES['update_picture']['name'];
@@ -120,8 +120,11 @@ if(isset($_POST['update_product'])){
         echo "error";
     }
 
-    mysqli_query($conn, "UPDATE `product` SET name = '$update_name', description = '$update_desc', category_id_fk = $update_cat_id, inventory = '$update_inventory', price = '$update_price', modified_at = CURRENT_TIMESTAMP(), product_picture = '$update_fileDestination' WHERE id = '$update_p_id'") or die('query failed');
-  
+    mysqli_query($conn, "UPDATE `product` SET name = '$update_name', description = '$update_desc', category_id_fk = $update_cat_id, inventory = '$update_inventory', price = '$update_price', modified_at = CURRENT_TIMESTAMP(), product_picture = '$update_fileDestination' WHERE productid = '$update_p_id'") or die('query failed');
+    }
+    else {
+        mysqli_query($conn, "UPDATE `product` SET name = '$update_name', description = '$update_desc', category_id_fk = $update_cat_id, inventory = '$update_inventory', price = '$update_price', modified_at = CURRENT_TIMESTAMP() WHERE productid = '$update_p_id'") or die('query failed');
+    }
     header('location:admin_products.php');
   }
 
@@ -196,8 +199,8 @@ if(isset($_POST['update_product'])){
                           </tr>
                           <tr>  
                             <td>
-                            <input type="file" id="file" name="product_picture" accept="image/png, image/jpeg">
-                            <label for="file" class="picupload">La photo du produit</label>
+                            <input type="file" id="product_picture" name="product_picture" accept="image/png, image/jpeg">
+                            <label for="product_picture" class="picupload">La photo du produit</label>
                             </td>
                                 <td>
                                   <input type="submit" value="ajouter" name="add_product" class="btn">
@@ -268,7 +271,7 @@ if(isset($_POST['update_product'])){
 <?php
       if(isset($_GET['update'])){
          $update_id = $_GET['update'];
-         $update_query = mysqli_query($conn, "SELECT * FROM `product` WHERE id = '$update_id'") or die('query failed');
+         $update_query = mysqli_query($conn, "SELECT * FROM `product` WHERE productid = '$update_id'") or die('query failed');
          if(mysqli_num_rows($update_query) > 0){
             while($fetch_update = mysqli_fetch_assoc($update_query)){
    ?>
@@ -282,7 +285,7 @@ if(isset($_POST['update_product'])){
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['id']; ?>">
+                        <input type="hidden" name="update_p_id" value="<?php echo $fetch_update['productid']; ?>">
                     </td>
                 </tr>
                 <tr>
@@ -296,7 +299,7 @@ if(isset($_POST['update_product'])){
                     </td>
                 </tr>
                 <tr>
-                              <td>
+                              <td colspan="2">
                                 <?php 
                                     $select_category_query ="SELECT `category_name`, `category_id` FROM `product_category`";
                                     $select_category_result = $conn->query($select_category_query);

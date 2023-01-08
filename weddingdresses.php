@@ -72,7 +72,7 @@ if(isset($_POST['add_to_cart'])){
       <form action="" method="post">
         <div class="box">
             <div class="image">
-                <img src="<?php echo $fetch_products['product_picture']; ?>.png" alt="">
+                <img src="<?php echo $fetch_products['product_picture']; ?>.jpeg" alt="">
                 <div class="icons">
                     <input type="submit" value="add to cart" name="add_to_cart" class="cart-btn">
                 </div>

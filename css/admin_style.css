@@ -28,7 +28,7 @@
               width: 300px;
               margin: 10px auto;
               text-align: center;
-              background-color: #F0EBE3;
+              background-color: #FFF0F5;
               border-radius: 10px;
               padding: 20px;
               display: inline-block;
@@ -70,14 +70,17 @@
        .card .delete-btn{
             margin: 10px auto;
             display: block;
-            background-color: #171010;
-            width: 150px;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 7px;
-            color: white;
-            
+            background-color: rgb(44, 44, 44);
+            width: 100%;
+            font-size: 16px;
+            padding: 14px;
+            border-radius: 4px;
+            color: white;   
         }
+        
+        .card .delete-btn:hover{
+          background-color: black;  
+      }
 
         .option-btn, 
         .delete-btn{
