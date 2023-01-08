@@ -36,7 +36,7 @@ if(isset($_GET['delete_all'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>cart</title>
+   <title>Panier</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -50,13 +50,13 @@ if(isset($_GET['delete_all'])){
 <?php include 'header.php'; ?>
 
 <div class="heading">
-   <h3>shopping cart</h3>
-   <p> <a href="home.php">home</a> / cart </p>
+   <h3>Panier</h3>
+   <p> <a href="home.php">acceuil</a> / panier </p>
 </div>
 
 <section class="shopping-cart">
 
-   <h1 class="title">products added</h1>
+   <h1 class="title">produits ajoutés</h1>
 
    <div class="box-container">
       <?php
@@ -73,7 +73,7 @@ if(isset($_GET['delete_all'])){
          <form action="" method="post">
             <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['cartitemid']; ?>">
             <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
-            <input type="submit" name="update_cart" value="update" class="option-btn">
+            <input type="submit" name="update_cart" value="modifer" class="option-btn">
          </form>
          <div class="sub-total"> sub total : <span><?php echo $sub_total = ($fetch_cart['quantity'] * $fetch_cart['price']); ?> dh</span> </div>
       </div>
@@ -81,7 +81,7 @@ if(isset($_GET['delete_all'])){
       $grand_total += $sub_total;
          }
       }else{
-         echo '<p class="empty">your cart is empty</p>';
+         echo '<p class="empty">Votre panier est vide</p>';
       }
       ?>
    </div>

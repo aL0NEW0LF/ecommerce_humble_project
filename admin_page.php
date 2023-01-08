@@ -21,7 +21,7 @@ if(!isset($admin_id)){
     <link rel="stylesheet" href="css/admin_style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
     <script src="https://kit.fontawesome.com/5fba574a6f.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <?php include 'admin_header.php'; ?>
