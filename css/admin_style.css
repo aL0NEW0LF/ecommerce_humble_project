@@ -11,6 +11,7 @@
             body {
             height: 100%;
             margin: 0;
+            background-color: #FFFAFA;
             }
             .grid-container {
             width: 100%;
@@ -28,7 +29,7 @@
               width: 300px;
               margin: 10px auto;
               text-align: center;
-              background-color: #FFF0F5;
+              background-color: #F0EBE3;
               border-radius: 10px;
               padding: 20px;
               display: inline-block;
@@ -112,9 +113,7 @@
 
  .sidebar ul li{
   padding: 15px;
-  border-bottom: 1px solid #EDEDED;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid black;
 }    
 
  .sidebar ul li a{
@@ -184,7 +183,7 @@ table{
 th{
   font-size: 20px;
   background-color: #FFF0F5;
-  color: white;
+  color: black;
   padding: 10px 0;
   }
 
@@ -198,7 +197,7 @@ margin: 0;
 
 td, th{
   text-align: center; 
-  border: 1px solid #ddd; 
+  border: 1px solid black; 
   margin: 0;
 }
 
@@ -518,7 +517,7 @@ td.price{
   height: auto;
   margin: auto;
   background-color: #FFF0F5;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
   border-radius: .5rem;
 }
 
